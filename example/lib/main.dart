@@ -38,37 +38,45 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       body: Container(
-        color: Colors.grey,
+        child: Image.asset("lib/img/1.png"),
       ),
-      bottomNavigationBar: DotNavigationBar(
-        currentIndex: _SelectedTab.values.indexOf(_selectedTab),
-        onTap: _handleIndexChanged,
-        items: [
-          /// Home
-          DotNavigationBarItem(
-            icon: Icon(Icons.home),
-            selectedColor: Colors.greenAccent[600],
-          ),
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.only(bottom: 10),
+        child: DotNavigationBar(
+          margin: EdgeInsets.only(left: 10, right: 10),
+          currentIndex: _SelectedTab.values.indexOf(_selectedTab),
+          dotIndicatorColor: Colors.white,
+          unselectedItemColor: Colors.grey[300],
+          // enableFloatingNavBar: false,
+          onTap: _handleIndexChanged,
+          items: [
+            /// Home
+            DotNavigationBarItem(
+              icon: Icon(Icons.home),
+              selectedColor: Color(0xff73544C),
+            ),
 
-          /// Likes
-          DotNavigationBarItem(
-            icon: Icon(Icons.favorite_border),
-            selectedColor: Colors.pink[600],
-          ),
+            /// Likes
+            DotNavigationBarItem(
+              icon: Icon(Icons.favorite),
+              selectedColor: Color(0xff73544C),
+            ),
 
-          /// Search
-          DotNavigationBarItem(
-            icon: Icon(Icons.search),
-            selectedColor: Colors.orange[600],
-          ),
+            /// Search
+            DotNavigationBarItem(
+              icon: Icon(Icons.search),
+              selectedColor: Color(0xff73544C),
+            ),
 
-          /// Profile
-          DotNavigationBarItem(
-            icon: Icon(Icons.person),
-            selectedColor: Colors.blue[600],
-          ),
-        ],
+            /// Profile
+            DotNavigationBarItem(
+              icon: Icon(Icons.person),
+              selectedColor: Color(0xff73544C),
+            ),
+          ],
+        ),
       ),
     );
   }
